@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    
+    <meta name="Generator" content="iWeb 2.0.4" />
+    <meta name="iWeb-Build" content="local-build-20130324" />
+    <meta name="viewport" content="width=700" />
+    <title>Windows Debugging Series</title>
+    <link rel="stylesheet" type="text/css" media="screen,print" href="26_Glossary_files/26_Glossary.css" />
+    <!--[if IE]><link rel='stylesheet' type='text/css' media='screen,print' href='26_Glossary_files/26_GlossaryIE.css'/><![endif]-->
+    <script language="javascript" type="text/javascript"><!--
+
+iWebBlogMainPageName = 'Blog.html';
+iWebBlogMainPageTitle = 'Blog';
+iWebBlogArchivePageName = 'Archive.html';
+iWebBlogArchivePageTitle = 'Archive';
+iWebBlogFeedType = 'static';
+
+
+--></script>
+    <script type="text/javascript" src="../../../../Scripts/iWebSite.js"></script>
+    <script type="text/javascript" src="../../../../Scripts/Widgets/SharedResources/WidgetCommon.js"></script>
+    <script type="text/javascript" src="../../../../Scripts/Widgets/Navbar/navbar.js"></script>
+    <script type="text/javascript" src="http://www.me.com/1/up/comments/scripts/search.js"></script>
+    <script type="text/javascript" src="../../../../Scripts/iWebBlog.js"></script>
+    <script type="text/javascript" src="26_Glossary_files/26_Glossary.js"></script>
+  </head>
+  <body style="background: #ffffff url(26_Glossary_files/PhotoGray_browser_bg-3.jpg) repeat scroll top left; margin: 0pt; " onload="onPageLoad();" onunload="onPageUnload();">
+    <div style="text-align: center; ">
+      <div style="margin-bottom: 0px; margin-left: auto; margin-right: auto; margin-top: 0px; overflow: hidden; position: relative; word-wrap: break-word;  text-align: left; width: 700px; " id="body_content">
+        <div style="background: transparent url(26_Glossary_files/PhotoGray_bg_c-1.jpg) repeat scroll top left; width: 700px; ">
+          <div style="margin-left: 0px; position: relative; width: 700px; z-index: 0; " id="nav_layer">
+            <div style="height: 0px; line-height: 0px; " class="bumper"> </div>
+            <div style="height: 700px; width: 700px;  height: 700px; left: 0px; position: absolute; top: -80px; width: 700px; z-index: 1; " class="tinyText style_SkipStroke">
+              <img src="26_Glossary_files/Darkroom_spotlight.jpg" alt="" style="border: none; height: 700px; width: 700px; " />
+            </div>
+            <div style="height: 1px; line-height: 1px; " class="tinyText"> </div>
+            <div class="com-apple-iweb-widget-navbar flowDefining" id="widget0" style="margin-left: 0px; margin-top: 19px; position: relative; width: 700px; z-index: 1; ">
+    
+              <div id="widget0-navbar" class="navbar">
+
+      
+                <div id="widget0-bg" class="navbar-bg">
+
+        
+                  <ul id="widget0-navbar-list" class="navbar-list">
+ <li></li> 
+</ul>
+                  
+      
+</div>
+                
+    
+</div>
+            </div>
+            <script type="text/javascript"><!--//--><![CDATA[//><!--
+new NavBar('widget0', '../../../../Scripts/Widgets/Navbar', '../../../../Scripts/Widgets/SharedResources', '../../../..', {"path-to-root": "..\/..\/..\/..\/", "navbar-css": ".navbar {\n\tfont-family: Futura, 'Trebuchet MS', sans-serif;\n\ttext-transform: uppercase;\n\tfont-size: .7em;\n\tcolor: #C1C1C1;\n\tline-height: 25px;\n\ttext-align: center;\n\tpadding: 0px;\n\tbackground-image: url(26_Glossary_files\/PhotoGray_nav_bg.png);\n\t_background-image: url(26_Glossary_files\/PhotoGray_nav_bg.jpg);\n\tbackground-repeat: repeat-y;\n\tborder-top: 1px solid #999;\n\tborder-bottom: 1px solid #999;\n}\n\n.navbar-bg {\n\tpadding: 6px 0px 4px 0px;\n}\n\n.navbar ul {\n\tlist-style: none;\n\tmargin: 0px;\n\tpadding: 0px 10px 0px 10px;\n}\n\n.navbar ul li {\n\tdisplay: inline; \n\tlist-style-type: none;\n\tmargin: 0px;\n\tpadding: 0px 10px 0px 10px;\n}\n\n\n.noncurrent-page  a:visited {\n\ttext-decoration: none;\n\tcolor: #C1C1C1;\n\ttext-shadow: 0px -1px 2px #333;\n}\n\n.noncurrent-page  a {\n\ttext-decoration: none;\n\tcolor: #C1C1C1;\n\ttext-shadow: 0px -1px 2px #333;\n}\n\n\n.noncurrent-page a:hover {\n\ttext-decoration: none;\n\tcolor: #EC001E;\n\ttext-shadow: 0px -1px 2px #333;\n}\n\n.current-page a\n{\n\ttext-decoration: none;\n\tcolor: #000;\n\ttext-shadow: 0px -1px 2px #7E7E7E;\n}\n\n.current-page a:visited\n{\n\ttext-decoration: none;\n\tcolor: #000;\n\ttext-shadow: 0px -1px 2px #7E7E7E;\n}\n\n", "current-page-GUID": "7F47D4D9-3681-40D5-944E-2CABD511A660", "isCollectionPage": "YES"});
+//--><!]]></script>
+            <div style="clear: both; height: 0px; line-height: 0px; " class="spacer"> </div>
+          </div>
+          <div style="height: 52px; margin-left: 0px; position: relative; width: 700px; z-index: 10; " id="header_layer">
+            <div style="height: 0px; line-height: 0px; " class="bumper"> </div>
+            <div id="id1" style="visibility: hidden;  height: 39px; left: 30px; position: absolute; top: 13px; width: 640px; z-index: 1; " class="style_SkipStroke_1">
+              <div class="text-content Normal_External_640_39" style="padding: 0px; ">
+                <div class="Normal">
+                  <p style="padding-bottom: 0pt; padding-top: 0pt; " class="Header"><a title="6_Introduction.html" href="6_Introduction.html">Windows Debugging Series</a></p>
+                </div>
+              </div>
+              <div id="generic-header-attribute" class="Header"></div>
+            </div>
+          </div>
+          <div style="margin-left: 0px; position: relative; width: 700px; z-index: 5; " id="body_layer">
+            <div style="height: 0px; line-height: 0px; " class="bumper"> </div>
+            <div id="id2" style="visibility: hidden;  height: 29px; left: 30px; position: absolute; top: 45px; width: 640px; z-index: 1; " class="style_SkipStroke_2">
+              <div class="text-content Normal_External_640_29" style="padding: 0px; ">
+                <div class="Normal">
+                  <p style="padding-bottom: 0pt; padding-top: 0pt; " class="Title">Glossary</p>
+                </div>
+              </div>
+              <div id="generic-title-attributes" class="Title"></div>
+            </div>
+            
+
+
+            <div id="id3" style="visibility: hidden;  height: 23px; left: 30px; position: absolute; top: 13px; width: 640px; z-index: 1; " class="style_SkipStroke_3">
+              <div class="text-content Normal_External_640_23" style="padding: 0px; ">
+                <div class="Normal">
+                  <p style="padding-bottom: 0pt; padding-top: 0pt; " class="Date">26 de janeiro de 2013</p>
+                </div>
+              </div>
+              <div id="generic-datefield-attributes" class="Date"></div>
+            </div>
+            <div style="height: 1px; line-height: 1px; " class="tinyText"> </div>
+            <div style="visibility: hidden;  margin-left: 30px; margin-top: 76px; position: relative; width: 640px; z-index: 1; " class="style_SkipStroke_4 flowDefining">
+              <div class="text-content Normal_External_640_937" style="padding: 0px; ">
+                <div class="Normal">
+                  <p style="padding-top: 0pt; " class="Body">This post gives a brief definition of some relevant keywords and expression that is going to be used along this series. This post, as the introduction will continuously be updates as new relevant keywords and expression is added in a post.<br /></p>
+                  <p class="Body"><br /></p>
+                  <p class="Body"><span class="style">Exception:</span><br /></p>
+                  <p class="Body">Exception in software is an action that is not part of the of the ordinary operation. Exception moves the execution from the current part of the code to other part of the code or system code.<br /></p>
+                  <p class="Body"><br /></p>
+                  <p class="Body"><span class="style">Unhandled exception:</span><br /></p>
+                  <p class="Body">Unhandled exception is an exception that is not dealt with the code. It can occur for many reason that will be discussed in this series posts. Unhandled exception is usually seen by the <span class="style_1">Kernel32!RaiseException</span>, which is initiate by the CPU. An application can also raise an exception, for instance using the <span class="style_2">throw</span> statement, but neither this not the CPU exception are properly caught and handled internally by the application.<br /></p>
+                  <p class="Body"><br /></p>
+                  <p class="Body"><span class="style">Deadlocks:</span><br /></p>
+                  <p class="Body">Deadlock is a situation in which two or more concurrent thread are each waiting for other to complete its action and this never happens.<br /></p>
+                  <p class="Body">For instance: suppose one application has two threads that access a flag protected by a mutant exclusive (mutex) or critical section. One of this thread locks the flag access but never releases and, when the second one tries to lock it will be blocked.<br /></p>
+                  <p class="Body"><br /></p>
+                  <p class="Body"><span class="style">Memory corruption:</span><br /></p>
+                  <p class="Body">Please see the <a class="class1" title="../2/23_Memory_Corruption.html" href="../2/23_Memory_Corruption.html">Memory Corruption</a> post.<br /></p>
+                  <p class="Body"><br /></p>
+                  <p class="Body"><span class="style">Resource Leaks:</span><br /></p>
+                  <p class="Body">Resource is any entity that occupies space (physical or virtual memory) in system, such as handles and memory. Leaks are any resource that have been acquired or created but not properly released or deleted. For instance, a memory created using the <span class="style_2">new</span> statement but not deleted by <span class="style_2">delete</span> statement or a event handle created by <span class="style_1">CreateEvent</span> API but not released by the <span class="style_1">CloseHandle</span> API.<br /></p>
+                  <p class="Body">Please see the Resource Leaks post.<br /></p>
+                  <p class="Body"><br /></p>
+                  <p class="Body"><span class="style">First change exception:</span><br /></p>
+                  <p class="Free_Form">First chance exception most often does not mean there is a problem in the code. For applications which handle exceptions gracefully, first chance exception messages let the developer know that an exceptional situation was encountered and was handled.<br /></p>
+                  <p class="Body"><br /></p>
+                  <p class="Body"><span class="style">Second change exception:</span><br /></p>
+                  <p class="Body">Second change exception is a notification for unhandled exception that will certainly prevent application from continue running.<br /></p>
+                  <p class="Body"><br /></p>
+                  <p class="paragraph_style">Postmortem Debugging:<br /></p>
+                  <p style="padding-bottom: 0pt; " class="Body">This is simply a crash or hang dump analysis that has been collected from an ex-running application.</p>
+                </div>
+              </div>
+              <div id="generic-body-attributes" class="Body"></div>
+            </div>
+            <div style="height: 0px; line-height: 0px; " class="spacer"> </div>
+          </div>
+          <div style="height: 150px; margin-left: 0px; position: relative; width: 700px; z-index: 15; " id="footer_layer">
+            <div style="height: 0px; line-height: 0px; " class="bumper"> </div>
+            <div id="id4" style="height: 30px; left: 350px; position: absolute; top: 20px; width: 319px; z-index: 1; " class="style_SkipStroke_5">
+              <div class="text-content graphic_textbox_layout_style_default_External_319_30" style="padding: 0px; ">
+                <div class="graphic_textbox_layout_style_default">
+                  <div class="paragraph Next" style="padding-bottom: 0pt; padding-top: 0pt; "><a title="27_What_is_Debug.html" href="27_What_is_Debug.html" class="style_3">next</a><span class="style_4"> </span><div class="tinyText inline-block" style="height: 15px; position: relative; top: -3px; width: 10px; "><img usemap="#map1" id="shapeimage_1" src="26_Glossary_files/shapeimage_1.png" style="border: none; height: 21px; left: -3px; position: absolute; top: -3px; width: 16px; z-index: 1; " alt="" title="" /><map name="map1" id="map1"><area href="27_What_is_Debug.html" title="27_What_is_Debug.html" alt="27_What_is_Debug.html" coords="3, 3, 13, 18" /></map></div></div>
+                </div>
+                <div style="clear: both; height: 0px; line-height: 0px; " class="tinyText"> </div>
+              </div>
+            </div>
+            
+
+
+            <div id="id5" style="height: 30px; left: 30px; position: absolute; top: 20px; width: 320px; z-index: 1; " class="style_SkipStroke_5">
+              <div class="text-content graphic_textbox_layout_style_default_External_320_30" style="padding: 0px; ">
+                <div class="graphic_textbox_layout_style_default">
+                  <div class="paragraph Previous" style="padding-bottom: 0pt; padding-top: 0pt; "><div class="tinyText inline-block" style="height: 15px; position: relative; width: 10px; "><img usemap="#map2" id="shapeimage_2" src="26_Glossary_files/shapeimage_2.png" style="border: none; height: 21px; left: -3px; position: absolute; top: -3px; width: 16px; z-index: 1; " alt="" title="" /><map name="map2" id="map2"><area href="6_Introduction.html" title="6_Introduction.html" alt="6_Introduction.html" coords="3, 3, 13, 18" /></map></div><span class="style_4"> </span><a title="6_Introduction.html" href="6_Introduction.html" class="style_4">previous</a></div>
+                </div>
+                <div style="clear: both; height: 0px; line-height: 0px; " class="tinyText"> </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
+
+

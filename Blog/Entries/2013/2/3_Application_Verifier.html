@@ -1,0 +1,264 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    
+    <meta name="Generator" content="iWeb 2.0.4" />
+    <meta name="iWeb-Build" content="local-build-20130324" />
+    <meta name="viewport" content="width=700" />
+    <title>Windows Debugging Series</title>
+    <link rel="stylesheet" type="text/css" media="screen,print" href="3_Application_Verifier_files/3_Application_Verifier.css" />
+    <!--[if IE]><link rel='stylesheet' type='text/css' media='screen,print' href='3_Application_Verifier_files/3_Application_VerifierIE.css'/><![endif]-->
+    <script language="javascript" type="text/javascript"><!--
+
+iWebBlogMainPageName = 'Blog.html';
+iWebBlogMainPageTitle = 'Blog';
+iWebBlogArchivePageName = 'Archive.html';
+iWebBlogArchivePageTitle = 'Archive';
+iWebBlogFeedType = 'static';
+
+
+--></script>
+    <script type="text/javascript" src="../../../../Scripts/iWebSite.js"></script>
+    <script type="text/javascript" src="../../../../Scripts/Widgets/SharedResources/WidgetCommon.js"></script>
+    <script type="text/javascript" src="../../../../Scripts/Widgets/Navbar/navbar.js"></script>
+    <script type="text/javascript" src="http://www.me.com/1/up/comments/scripts/search.js"></script>
+    <script type="text/javascript" src="../../../../Scripts/iWebBlog.js"></script>
+    <script type="text/javascript" src="../../../../Scripts/iWebImage.js"></script>
+    <script type="text/javascript" src="3_Application_Verifier_files/3_Application_Verifier.js"></script>
+  </head>
+  <body style="background: #ffffff url(3_Application_Verifier_files/PhotoGray_browser_bg-3.jpg) repeat scroll top left; margin: 0pt; " onload="onPageLoad();" onunload="onPageUnload();">
+    <div style="text-align: center; ">
+      <div style="margin-bottom: 0px; margin-left: auto; margin-right: auto; margin-top: 0px; overflow: hidden; position: relative; word-wrap: break-word;  text-align: left; width: 700px; " id="body_content">
+        <div style="background: transparent url(3_Application_Verifier_files/PhotoGray_bg_c-1.jpg) repeat scroll top left; width: 700px; ">
+          <div style="margin-left: 0px; position: relative; width: 700px; z-index: 0; " id="nav_layer">
+            <div style="height: 0px; line-height: 0px; " class="bumper"> </div>
+            <div style="height: 700px; width: 700px;  height: 700px; left: 0px; position: absolute; top: -80px; width: 700px; z-index: 1; " class="tinyText style_SkipStroke">
+              <img src="3_Application_Verifier_files/Darkroom_spotlight.jpg" alt="" style="border: none; height: 700px; width: 700px; " />
+            </div>
+            <div style="height: 1px; line-height: 1px; " class="tinyText"> </div>
+            <div class="com-apple-iweb-widget-navbar flowDefining" id="widget0" style="margin-left: 0px; margin-top: 19px; position: relative; width: 700px; z-index: 1; ">
+    
+              <div id="widget0-navbar" class="navbar">
+
+      
+                <div id="widget0-bg" class="navbar-bg">
+
+        
+                  <ul id="widget0-navbar-list" class="navbar-list">
+ <li></li> 
+</ul>
+                  
+      
+</div>
+                
+    
+</div>
+            </div>
+            <script type="text/javascript"><!--//--><![CDATA[//><!--
+new NavBar('widget0', '../../../../Scripts/Widgets/Navbar', '../../../../Scripts/Widgets/SharedResources', '../../../..', {"path-to-root": "..\/..\/..\/..\/", "navbar-css": ".navbar {\n\tfont-family: Futura, 'Trebuchet MS', sans-serif;\n\ttext-transform: uppercase;\n\tfont-size: .7em;\n\tcolor: #C1C1C1;\n\tline-height: 25px;\n\ttext-align: center;\n\tpadding: 0px;\n\tbackground-image: url(3_Application_Verifier_files\/PhotoGray_nav_bg.png);\n\t_background-image: url(3_Application_Verifier_files\/PhotoGray_nav_bg.jpg);\n\tbackground-repeat: repeat-y;\n\tborder-top: 1px solid #999;\n\tborder-bottom: 1px solid #999;\n}\n\n.navbar-bg {\n\tpadding: 6px 0px 4px 0px;\n}\n\n.navbar ul {\n\tlist-style: none;\n\tmargin: 0px;\n\tpadding: 0px 10px 0px 10px;\n}\n\n.navbar ul li {\n\tdisplay: inline; \n\tlist-style-type: none;\n\tmargin: 0px;\n\tpadding: 0px 10px 0px 10px;\n}\n\n\n.noncurrent-page  a:visited {\n\ttext-decoration: none;\n\tcolor: #C1C1C1;\n\ttext-shadow: 0px -1px 2px #333;\n}\n\n.noncurrent-page  a {\n\ttext-decoration: none;\n\tcolor: #C1C1C1;\n\ttext-shadow: 0px -1px 2px #333;\n}\n\n\n.noncurrent-page a:hover {\n\ttext-decoration: none;\n\tcolor: #EC001E;\n\ttext-shadow: 0px -1px 2px #333;\n}\n\n.current-page a\n{\n\ttext-decoration: none;\n\tcolor: #000;\n\ttext-shadow: 0px -1px 2px #7E7E7E;\n}\n\n.current-page a:visited\n{\n\ttext-decoration: none;\n\tcolor: #000;\n\ttext-shadow: 0px -1px 2px #7E7E7E;\n}\n\n", "current-page-GUID": "7F47D4D9-3681-40D5-944E-2CABD511A660", "isCollectionPage": "YES"});
+//--><!]]></script>
+            <div style="clear: both; height: 0px; line-height: 0px; " class="spacer"> </div>
+          </div>
+          <div style="height: 52px; margin-left: 0px; position: relative; width: 700px; z-index: 10; " id="header_layer">
+            <div style="height: 0px; line-height: 0px; " class="bumper"> </div>
+            <div id="id1" style="visibility: hidden;  height: 39px; left: 30px; position: absolute; top: 13px; width: 640px; z-index: 1; " class="style_SkipStroke_1">
+              <div class="text-content Normal_External_640_39" style="padding: 0px; ">
+                <div class="Normal">
+                  <p style="padding-bottom: 0pt; padding-top: 0pt; " class="Header"><a title="../1/6_Introduction.html" href="../1/6_Introduction.html">Windows Debugging Series</a></p>
+                </div>
+              </div>
+              <div id="generic-header-attribute" class="Header"></div>
+            </div>
+          </div>
+          <div style="margin-left: 0px; position: relative; width: 700px; z-index: 5; " id="body_layer">
+            <div style="height: 0px; line-height: 0px; " class="bumper"> </div>
+            <div id="id2" style="visibility: hidden;  height: 29px; left: 30px; position: absolute; top: 385px; width: 640px; z-index: 1; " class="style_SkipStroke_2">
+              <div class="text-content Normal_External_640_29" style="padding: 0px; ">
+                <div class="Normal">
+                  <p style="padding-bottom: 0pt; padding-top: 0pt; " class="Title">Application Verifier</p>
+                </div>
+              </div>
+              <div id="generic-title-attributes" class="Title"></div>
+            </div>
+            
+
+
+            <div id="id3" style="visibility: hidden;  height: 23px; left: 30px; position: absolute; top: 364px; width: 640px; z-index: 1; " class="style_SkipStroke_3">
+              <div class="text-content Normal_External_640_23" style="padding: 0px; ">
+                <div class="Normal">
+                  <p style="padding-bottom: 0pt; padding-top: 0pt; " class="Date">3 de fevereiro de 2013</p>
+                </div>
+              </div>
+              <div id="generic-datefield-attributes" class="Date"></div>
+            </div>
+            
+
+
+            <div style="height: 335px; width: 420px;  height: 334px; left: 30px; position: absolute; top: 16px; width: 420px; z-index: 1; " class="tinyText stroke_0">
+              <div style="position: relative; width: 420px; ">
+                <img src="3_Application_Verifier_files/shapeimage_1.jpg" alt="" style="height: 335px; left: 0px; position: absolute; top: 0px; width: 420px; visibility: hidden; " id="generic-picture-attributes" />
+              </div>
+            </div>
+            <div style="height: 1px; line-height: 1px; " class="tinyText"> </div>
+            <div style="visibility: hidden;  margin-left: 30px; margin-top: 417px; position: relative; width: 640px; z-index: 1; " class="style_SkipStroke_4 flowDefining">
+              <div class="text-content Normal_External_640_3180" style="padding: 0px; ">
+                <div class="Normal">
+                  <p style="padding-top: 0pt; " class="Body"><a class="class1" title="http://www.microsoft.com/en-us/download/details.aspx?id=20028" href="http://www.microsoft.com/en-us/download/details.aspx?id=20028">Application Verifier</a> is other independent tool useful for general application troubleshooting. Enabling this tool for your process allows you to catch a whole range of common programming mistakes, which include invalid handle usage, lock usage, file paths, dangerous function. It a very good practice enabling Application Verifier during the development cycle.<br /></p>
+                  <p class="Body"><br /></p>
+                  <p class="Body">Some test setting can dramatically change the speedy of application execution and can cause timing-issues not to surface.<br /></p>
+                  <p class="Body"><br /></p>
+                  <p class="Body">The Applications pane shows all applications currently enabled for verification. New application can be added and existent one can be removed via File menu. Be sure to save every time an change is performed.<br /></p>
+                  <p class="Body"><br /></p>
+                  <p class="Body"><span class="style">Application Verifier Test Setting</span><br /></p>
+                  <p class="Body"><br /></p>
+                  <p class="Body">The Application Verifier has many test setting to find problems and they will now be quickly reviewed.<br /></p>
+                  <p class="Body"><br /></p>
+                  <p class="paragraph_style">Exception<span class="style_1"><br /></span></p>
+                  <p class="Body">This catches any first-ch<span class="style_2">ange access violation that </span>might have been inadvertently caught by the application.<br /></p>
+                  <p class="Body"><br /></p>
+                  <p class="paragraph_style">Handles<br /></p>
+                  <p class="Body">Handles are used as an abstraction model to the core operating system. One of the most common problem is specifying the wrong handle value to the various APIs that accept them. This test setting ch<span class="style_2">ecks for invalid handles, inv</span>alid thread local storage (TLS) index, invalid parameter in calls to <span class="style_3">WaitForMultipleObjects</span>,<span class="style_2"> null handle value</span>, DllMain concurrency proble<span class="style_2">ms, invalid handle </span>types.<br /></p>
+                  <p class="Body"><br /></p>
+                  <p class="paragraph_style">Heaps<br /></p>
+                  <p class="Body">This test setting contains powerful instrumentation on heap-related problems. It can enables instrumentation on heap block fill patterns, heap block guard pages, and stack trancing. The stack tracing capabilities are extremely powerful as they provide historic view of all allocation and deallocation made in the process.<br /></p>
+                  <p class="Body"><br /></p>
+                  <p class="Body"><span class="style_2">This test settings can check buffer overrun, large allocations, invalid heap handles, generic heap corruptions, buffer underrun, first-change access violation.<br /></span></p>
+                  <p class="Body"><span class="style_2"><br /></span></p>
+                  <p class="paragraph_style"><span class="style_2">Locks<br /></span></p>
+                  <p class="Body"><span class="style_2">Any concurrent application may sometimes exchange shared data between thread. To prevent concurrent access (reading and writing) in the data, application uses lock features to synchronize the resource access. Unfortunately, this leads to some possible issues such as deadlock.<br /></span></p>
+                  <p class="Body"><br /></p>
+                  <p class="Body">This test setting provides a range of checks, such as forgetting to free a critical section, checking for active critical section when unloading DLL, verification correctness of owner thread ID and recursion count, use prior initialization, invalid deletion of critical section, leaving an unowned critical section, private locks usage.<br /></p>
+                  <p class="Body"><br /></p>
+                  <p class="paragraph_style">Memory<br /></p>
+                  <p class="Body">This test setting traps for numerous programming mistakes related to memory, such as invalid parameters for memory APIs, failed buffer initialization, module unloading, DllMain exception, thread exceptions.<br /></p>
+                  <p class="Body"><br /></p>
+                  <p class="paragraph_style">ThreadPool<br /></p>
+                  <p class="Body">ThreadPool is a component to use when an application requires multiple threads. The operating system manages when and how to create a thread. Unfortunately, this brings numerous bugs from improper usage of thread pool. This test setting traps theses bugs and notifies about the potential problems in the code., such as changed thread priority, unprocessed messages.<br /></p>
+                  <p class="Body"><br /></p>
+                  <p class="paragraph_style">TLS<br /></p>
+                  <p class="Body">Thread local storage (TLS) is a common mechanism used to allocate local thread specific data, done through TLS family of APIs. This test setting triggers calls to those APIs checking for <span class="style_3">TlsIndex</span> leaks, corrupted TLS state or invalid TLS index used.<br /></p>
+                  <p class="Body"><br /></p>
+                  <p class="Body"><span class="style_4">FilePath</span><br /></p>
+                  <p class="Body">Applications that uses the system file paths can suffer problems using wrong paths. Using this option, Win32 API will retrieve correct paths and will not cause a break, but will log the offending stack trace.<br /></p>
+                  <p class="Body"><br /></p>
+                  <p class="paragraph_style_1">HighVersionLie<br /></p>
+                  <p class="Body">Application that rely on a hard-coded Windows version number may be broken. This test setting allows developer to test against future Windows version. The Application Verifier hooks the <span class="style_3">GetVersion</span> and <span class="style_3">GetVersionEx</span> APIs and return higher Windows version.<br /></p>
+                  <p class="Body"><br /></p>
+                  <p class="paragraph_style_1">InteractiveService<br /></p>
+                  <p class="Body">Service runs under high privileges account, which may lead to security compromises. This test setting looks for interactive service and triggers user interface elements (such as Windows messages) exchange by service and the user application.<br /></p>
+                  <p class="Body"><br /></p>
+                  <p class="paragraph_style_1">KernelModeDriverInstall<br /></p>
+                  <p class="Body">As running in kernel mode and have access to critical system data, failures in drivers can have a significant impact on the system and, in the worst case, the blue screen. This test setting monitors whether the drivers are installed using proper channels, considering the use of proper APIs.<br /></p>
+                  <p class="Body"><br /></p>
+                  <p class="paragraph_style_1">Low Resource Simulation<br /></p>
+                  <p class="Body">This test setting helps developer to ensure the robustness of the application under condition with low resources faults should occur during execution. This test setting has several sub-settings that simulates different conditions:<br /></p>
+                  <ol>
+                    <li style="line-height: 21px; padding-left: 13px; text-indent: -13px; " class="full-width">
+                      <p style="text-indent: -13px; " class="paragraph_style_2"><span style="font-size: 14px; position: relative; top: 1px; " class="Bullet">*</span><span style="width: 4px; " class="inline-block"></span><span class="style_3">Include</span> - Controls which DLL faults should occur in. If * is used, all modules should be included in the test.<br /></p>
+                    </li>
+                    <li style="line-height: 21px; padding-left: 13px; text-indent: -13px; " class="full-width">
+                      <p style="text-indent: -13px; " class="paragraph_style_2"><span style="font-size: 14px; position: relative; top: 1px; " class="Bullet">*</span><span style="width: 4px; " class="inline-block"></span><span class="style_3">Exclude</span> - A list of DLL that should be excluded from fault injection.<br /></p>
+                    </li>
+                    <li style="line-height: 21px; padding-left: 13px; text-indent: -13px; " class="full-width">
+                      <p style="text-indent: -13px; " class="paragraph_style_2"><span style="font-size: 14px; position: relative; top: 1px; " class="Bullet">*</span><span style="width: 4px; " class="inline-block"></span><span class="style_3">Timeout</span> - Indicates how many milliseconds should elapsed at process startup before fault injection.<br /></p>
+                    </li>
+                    <li style="line-height: 21px; padding-left: 13px; text-indent: -13px; " class="full-width">
+                      <p style="text-indent: -13px; " class="paragraph_style_2"><span style="font-size: 14px; position: relative; top: 1px; " class="Bullet">*</span><span style="width: 4px; " class="inline-block"></span><span class="style_3">WAIT</span> - A number from 0 to 100 that indicates the probability that the <span class="style_3">WaitForXXX</span> APIs will fail beccause of fault injection.<br /></p>
+                    </li>
+                    <li style="line-height: 21px; padding-left: 13px; text-indent: -13px; " class="full-width">
+                      <p style="text-indent: -13px; " class="paragraph_style_2"><span style="font-size: 14px; position: relative; top: 1px; " class="Bullet">*</span><span style="width: 4px; " class="inline-block"></span><span class="style_3">HEAP_ALLOC</span> - A number from 0 to 100 that indicates the probability that the HeapAlloc APIs will fail because of fault injection.<br /></p>
+                    </li>
+                    <li style="line-height: 21px; padding-left: 13px; text-indent: -13px; " class="full-width">
+                      <p style="text-indent: -13px; " class="paragraph_style_2"><span style="font-size: 14px; position: relative; top: 1px; " class="Bullet">*</span><span style="width: 4px; " class="inline-block"></span><span class="style_3">VIRTUAL_ALLOC</span> - A number from 0 to 100 that indicates the probability that the VirtualAlloc APIs will fail because of fault injection.<br /></p>
+                    </li>
+                    <li style="line-height: 21px; padding-left: 13px; text-indent: -13px; " class="full-width">
+                      <p style="text-indent: -13px; " class="paragraph_style_2"><span style="font-size: 14px; position: relative; top: 1px; " class="Bullet">*</span><span style="width: 4px; " class="inline-block"></span><span class="style_3">REGISTRY</span> - A number from 0 to 100 that indicates the probability that Registry APIs will fail because of fault injection.<br /></p>
+                    </li>
+                    <li style="line-height: 21px; padding-left: 13px; text-indent: -13px; " class="full-width">
+                      <p style="text-indent: -13px; " class="paragraph_style_2"><span style="font-size: 14px; position: relative; top: 1px; " class="Bullet">*</span><span style="width: 4px; " class="inline-block"></span><span class="style_3">FILE</span> - A number from 0 to 100 that indicates the probability that File APIs will fail because of fault injection.<br /></p>
+                    </li>
+                    <li style="line-height: 21px; padding-left: 13px; text-indent: -13px; " class="full-width">
+                      <p style="text-indent: -13px; " class="paragraph_style_2"><span style="font-size: 14px; position: relative; top: 1px; " class="Bullet">*</span><span style="width: 4px; " class="inline-block"></span><span class="style_3">EVENT</span> - A number from 0 to 100 that indicates the probability that Event APIs will fail because of fault injection.<br /></p>
+                    </li>
+                    <li style="line-height: 21px; padding-left: 13px; text-indent: -13px; " class="full-width">
+                      <p style="text-indent: -13px; " class="paragraph_style_2"><span style="font-size: 14px; position: relative; top: 1px; " class="Bullet">*</span><span style="width: 4px; " class="inline-block"></span><span class="style_3">MAP_VIEW</span> - A number from 0 to 100 that indicates the probability that MapView APIs will fail because of fault injection.<br /></p>
+                    </li>
+                    <li style="line-height: 21px; padding-left: 13px; text-indent: -13px; " class="full-width">
+                      <p style="text-indent: -13px; " class="paragraph_style_2"><span style="font-size: 14px; position: relative; top: 1px; " class="Bullet">*</span><span style="width: 4px; " class="inline-block"></span><span class="style_3">OLE_ALLOC</span> - A number from 0 to 100 that indicates the probability that OLE Alloc APIs will fail because of fault injection.<br /></p>
+                    </li>
+                    <li style="line-height: 21px; padding-left: 13px; text-indent: -13px; " class="full-width">
+                      <p style="text-indent: -13px; " class="paragraph_style_2"><span style="font-size: 14px; position: relative; top: 1px; " class="Bullet">*</span><span style="width: 4px; " class="inline-block"></span><span class="style_3">STACKS</span> - <span class="style_3">TRUE</span> indicates that the stack growing feature should be disable to simulate low resources and <span class="style_3">FALSE</span> indicates the stack growth occurs.<br /></p>
+                    </li>
+                  </ol>
+                  <p class="Body"><br /></p>
+                  <p class="paragraph_style_1">LuaPriv<br /></p>
+                  <p class="Body">LuaPriv stands for Limited User Account Predictor and this test setting serves two purposes: (1) predicts whether an application is capable of running with reduced privileges and (2) determines possible problems when an application runs with a reduced privilege set. It can trigger failure open (parent) object, failure interpret the <span class="style_3">HKEY_CURRENT_USER</span> registry hive and many many others failures.<br /></p>
+                  <p class="Body"><br /></p>
+                  <p class="paragraph_style_1">DangerousAPI<br /></p>
+                  <p class="Body">This test setting checks for calls to some powerful Win32 APIs that care must be taken when using them to avoid problems that might arise when they are used. This dangerous APIs are:<br /></p>
+                  <ol>
+                    <li style="line-height: 21px; padding-left: 13px; text-indent: -13px; " class="full-width">
+                      <p style="text-indent: -13px; " class="paragraph_style_2"><span style="font-size: 14px; position: relative; top: 1px; " class="Bullet">*</span><span style="width: 4px; " class="inline-block"></span><span class="style_3">TerminateThread</span> - This API does not properly clear a thread stack and has a high chance of causing deadlocks and data corruption.<br /></p>
+                    </li>
+                    <li style="line-height: 21px; padding-left: 13px; text-indent: -13px; " class="full-width">
+                      <p style="text-indent: -13px; " class="paragraph_style_2"><span style="font-size: 14px; position: relative; top: 1px; " class="Bullet">*</span><span style="width: 4px; " class="inline-block"></span><span class="style_3">ExitProcess</span> - It internally uses the TerminateThread. Additionally, this may cause issues on other application that uses shared objects, such as a mutex.<br /></p>
+                    </li>
+                    <li style="line-height: 21px; padding-left: 13px; text-indent: -13px; " class="full-width">
+                      <p style="text-indent: -13px; " class="paragraph_style_2"><span style="font-size: 14px; position: relative; top: 1px; " class="Bullet">*</span><span style="width: 4px; " class="inline-block"></span><span class="style_3">LoadLibrary</span> - Loading DLL can cause deadlocks or even crashes due to DllMain code.<br /></p>
+                    </li>
+                    <li style="line-height: 21px; padding-left: 13px; text-indent: -13px; " class="full-width">
+                      <p style="text-indent: -13px; " class="paragraph_style_2"><span style="font-size: 14px; position: relative; top: 1px; " class="Bullet">*</span><span style="width: 4px; " class="inline-block"></span><span class="style_3">FreeLibrary</span> - Unloading DLL can cause deadlocks or even crashes due to DllMain code.<br /></p>
+                    </li>
+                  </ol>
+                  <p class="Body">Both <span class="style_3">LoadLibrary</span> and <span class="style_3">FreeLibrary</span> depend on the <span class="style_3">DLLMainCheck</span> property; if <span class="style_3">TRUE</span>, this test setting will traps any call from DllMain to those APIs.<br /></p>
+                  <p class="Body"><br /></p>
+                  <p class="Body"><span class="style_5">Important: DllMain should be as simply as possible! Do not add too much processing code on if because this can lead to problems describe above. Also, the </span><span class="style_6">PROCESS_DETACH</span><span class="style_5"> should not have any external access because the memory references will not probably be valid.</span><br /></p>
+                  <p class="Body"><br /></p>
+                  <p class="Body">Finally, this test setting also checks for stack commit size, which means that checks whether an application is set to not allow stack growth in cases in which stack overflow exception might be raised in low memory conditions.<br /></p>
+                  <p class="Body"><br /></p>
+                  <p class="paragraph_style_1">DirtyStack<br /></p>
+                  <p class="Body">Uninitialized stack variables are a very common source of bugs, mainly for pointers. This test settings fills the unused portion of the stack with specific pattern. When an application attempts to use uninitialized variables, it might result in an access violation because of accessing the invalid memory resulted from fill pattern.<br /></p>
+                  <p class="Body"><br /></p>
+                  <p class="paragraph_style_1">TimeRollOver<br /></p>
+                  <p class="Body">When working with the GetTickCount, GetTickCount64 and TimeGetTime APIs, it is crucial that the developer handles the cases in which rollover occurs. In order to test the rollover , this test setting enables a delay control when the rollover should occur.<br /></p>
+                  <p class="Body"><br /></p>
+                  <p class="paragraph_style_1">PrintAPI and PrintDriver<br /></p>
+                  <p style="padding-bottom: 0pt; " class="Body">Numerous problems can surface when working with the Print APIs. Both test settings enable a slew of tests to ensure proper usage of the APIs.</p>
+                </div>
+              </div>
+              <div id="generic-body-attributes" class="Body"></div>
+            </div>
+            <div style="height: 0px; line-height: 0px; " class="spacer"> </div>
+          </div>
+          <div style="height: 150px; margin-left: 0px; position: relative; width: 700px; z-index: 15; " id="footer_layer">
+            <div style="height: 0px; line-height: 0px; " class="bumper"> </div>
+            <div id="id4" style="height: 30px; left: 350px; position: absolute; top: 20px; width: 319px; z-index: 1; " class="style_SkipStroke_5">
+              <div class="text-content graphic_textbox_layout_style_default_External_319_30" style="padding: 0px; ">
+                <div class="graphic_textbox_layout_style_default">
+                  <div class="paragraph Next" style="padding-bottom: 0pt; padding-top: 0pt; "><a title="5_Global_Flags_(GFlags).html" href="5_Global_Flags_%28GFlags%29.html" class="style_7">next</a><span class="style_8"> </span><div class="tinyText inline-block" style="height: 15px; position: relative; top: -3px; width: 10px; "><img usemap="#map1" id="shapeimage_2" src="3_Application_Verifier_files/shapeimage_2.png" style="border: none; height: 21px; left: -3px; position: absolute; top: -3px; width: 16px; z-index: 1; " alt="" title="" /><map name="map1" id="map1"><area href="5_Global_Flags_%28GFlags%29.html" title="5_Global_Flags_(GFlags).html" alt="5_Global_Flags_%28GFlags%29.html" coords="3, 3, 13, 18" /></map></div></div>
+                </div>
+                <div style="clear: both; height: 0px; line-height: 0px; " class="tinyText"> </div>
+              </div>
+            </div>
+            
+
+
+            <div id="id5" style="height: 30px; left: 30px; position: absolute; top: 20px; width: 320px; z-index: 1; " class="style_SkipStroke_5">
+              <div class="text-content graphic_textbox_layout_style_default_External_320_30" style="padding: 0px; ">
+                <div class="graphic_textbox_layout_style_default">
+                  <div class="paragraph Previous" style="padding-bottom: 0pt; padding-top: 0pt; "><div class="tinyText inline-block" style="height: 15px; position: relative; width: 10px; "><img usemap="#map2" id="shapeimage_3" src="3_Application_Verifier_files/shapeimage_3.png" style="border: none; height: 21px; left: -3px; position: absolute; top: -3px; width: 16px; z-index: 1; " alt="" title="" /><map name="map2" id="map2"><area href="2_Leak_Diagnosis_Tools.html" title="2_Leak_Diagnosis_Tools.html" alt="2_Leak_Diagnosis_Tools.html" coords="3, 3, 13, 18" /></map></div><span class="style_8"> </span><a title="2_Leak_Diagnosis_Tools.html" href="2_Leak_Diagnosis_Tools.html" class="style_8">previous</a></div>
+                </div>
+                <div style="clear: both; height: 0px; line-height: 0px; " class="tinyText"> </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
+
+

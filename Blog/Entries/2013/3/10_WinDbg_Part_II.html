@@ -1,0 +1,302 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    
+    <meta name="Generator" content="iWeb 2.0.4" />
+    <meta name="iWeb-Build" content="local-build-20130324" />
+    <meta name="viewport" content="width=700" />
+    <title>Windows Debugging Series</title>
+    <link rel="stylesheet" type="text/css" media="screen,print" href="10_WinDbg_Part_II_files/10_WinDbg_Part_II.css" />
+    <!--[if IE]><link rel='stylesheet' type='text/css' media='screen,print' href='10_WinDbg_Part_II_files/10_WinDbg_Part_IIIE.css'/><![endif]-->
+    <script language="javascript" type="text/javascript"><!--
+
+iWebBlogMainPageName = 'Blog.html';
+iWebBlogMainPageTitle = 'Blog';
+iWebBlogArchivePageName = 'Archive.html';
+iWebBlogArchivePageTitle = 'Archive';
+iWebBlogFeedType = 'static';
+
+
+--></script>
+    <script type="text/javascript" src="../../../../Scripts/iWebSite.js"></script>
+    <script type="text/javascript" src="../../../../Scripts/Widgets/SharedResources/WidgetCommon.js"></script>
+    <script type="text/javascript" src="../../../../Scripts/Widgets/Navbar/navbar.js"></script>
+    <script type="text/javascript" src="http://www.me.com/1/up/comments/scripts/search.js"></script>
+    <script type="text/javascript" src="../../../../Scripts/iWebBlog.js"></script>
+    <script type="text/javascript" src="../../../../Scripts/iWebImage.js"></script>
+    <script type="text/javascript" src="10_WinDbg_Part_II_files/10_WinDbg_Part_II.js"></script>
+  </head>
+  <body style="background: #ffffff url(10_WinDbg_Part_II_files/PhotoGray_browser_bg-3.jpg) repeat scroll top left; margin: 0pt; " onload="onPageLoad();" onunload="onPageUnload();">
+    <div style="text-align: center; ">
+      <div style="margin-bottom: 0px; margin-left: auto; margin-right: auto; margin-top: 0px; overflow: hidden; position: relative; word-wrap: break-word;  text-align: left; width: 700px; " id="body_content">
+        <div style="background: transparent url(10_WinDbg_Part_II_files/PhotoGray_bg_c-1.jpg) repeat scroll top left; width: 700px; ">
+          <div style="margin-left: 0px; position: relative; width: 700px; z-index: 0; " id="nav_layer">
+            <div style="height: 0px; line-height: 0px; " class="bumper"> </div>
+            <div style="height: 700px; width: 700px;  height: 700px; left: 0px; position: absolute; top: -80px; width: 700px; z-index: 1; " class="tinyText style_SkipStroke">
+              <img src="10_WinDbg_Part_II_files/Darkroom_spotlight.jpg" alt="" style="border: none; height: 700px; width: 700px; " />
+            </div>
+            <div style="height: 1px; line-height: 1px; " class="tinyText"> </div>
+            <div class="com-apple-iweb-widget-navbar flowDefining" id="widget0" style="margin-left: 0px; margin-top: 19px; position: relative; width: 700px; z-index: 1; ">
+    
+              <div id="widget0-navbar" class="navbar">
+
+      
+                <div id="widget0-bg" class="navbar-bg">
+
+        
+                  <ul id="widget0-navbar-list" class="navbar-list">
+ <li></li> 
+</ul>
+                  
+      
+</div>
+                
+    
+</div>
+            </div>
+            <script type="text/javascript"><!--//--><![CDATA[//><!--
+new NavBar('widget0', '../../../../Scripts/Widgets/Navbar', '../../../../Scripts/Widgets/SharedResources', '../../../..', {"path-to-root": "..\/..\/..\/..\/", "navbar-css": ".navbar {\n\tfont-family: Futura, 'Trebuchet MS', sans-serif;\n\ttext-transform: uppercase;\n\tfont-size: .7em;\n\tcolor: #C1C1C1;\n\tline-height: 25px;\n\ttext-align: center;\n\tpadding: 0px;\n\tbackground-image: url(10_WinDbg_Part_II_files\/PhotoGray_nav_bg.png);\n\t_background-image: url(10_WinDbg_Part_II_files\/PhotoGray_nav_bg.jpg);\n\tbackground-repeat: repeat-y;\n\tborder-top: 1px solid #999;\n\tborder-bottom: 1px solid #999;\n}\n\n.navbar-bg {\n\tpadding: 6px 0px 4px 0px;\n}\n\n.navbar ul {\n\tlist-style: none;\n\tmargin: 0px;\n\tpadding: 0px 10px 0px 10px;\n}\n\n.navbar ul li {\n\tdisplay: inline; \n\tlist-style-type: none;\n\tmargin: 0px;\n\tpadding: 0px 10px 0px 10px;\n}\n\n\n.noncurrent-page  a:visited {\n\ttext-decoration: none;\n\tcolor: #C1C1C1;\n\ttext-shadow: 0px -1px 2px #333;\n}\n\n.noncurrent-page  a {\n\ttext-decoration: none;\n\tcolor: #C1C1C1;\n\ttext-shadow: 0px -1px 2px #333;\n}\n\n\n.noncurrent-page a:hover {\n\ttext-decoration: none;\n\tcolor: #EC001E;\n\ttext-shadow: 0px -1px 2px #333;\n}\n\n.current-page a\n{\n\ttext-decoration: none;\n\tcolor: #000;\n\ttext-shadow: 0px -1px 2px #7E7E7E;\n}\n\n.current-page a:visited\n{\n\ttext-decoration: none;\n\tcolor: #000;\n\ttext-shadow: 0px -1px 2px #7E7E7E;\n}\n\n", "current-page-GUID": "7F47D4D9-3681-40D5-944E-2CABD511A660", "isCollectionPage": "YES"});
+//--><!]]></script>
+            <div style="clear: both; height: 0px; line-height: 0px; " class="spacer"> </div>
+          </div>
+          <div style="height: 52px; margin-left: 0px; position: relative; width: 700px; z-index: 10; " id="header_layer">
+            <div style="height: 0px; line-height: 0px; " class="bumper"> </div>
+            <div id="id1" style="visibility: hidden;  height: 39px; left: 30px; position: absolute; top: 13px; width: 640px; z-index: 1; " class="style_SkipStroke_1">
+              <div class="text-content Normal_External_640_39" style="padding: 0px; ">
+                <div class="Normal">
+                  <p style="padding-bottom: 0pt; padding-top: 0pt; " class="Header"><a title="../1/6_Introduction.html" href="../1/6_Introduction.html">Windows Debugging Series</a></p>
+                </div>
+              </div>
+              <div id="generic-header-attribute" class="Header"></div>
+            </div>
+          </div>
+          <div style="margin-left: 0px; position: relative; width: 700px; z-index: 5; " id="body_layer">
+            <div style="height: 0px; line-height: 0px; " class="bumper"> </div>
+            <div id="id2" style="visibility: hidden;  height: 29px; left: 30px; position: absolute; top: 34px; width: 640px; z-index: 1; " class="style_SkipStroke_2">
+              <div class="text-content Normal_External_640_29" style="padding: 0px; ">
+                <div class="Normal">
+                  <p style="padding-bottom: 0pt; padding-top: 0pt; " class="Title">WinDbg Part II</p>
+                </div>
+              </div>
+              <div id="generic-title-attributes" class="Title"></div>
+            </div>
+            
+
+
+            <div id="id3" style="visibility: hidden;  height: 23px; left: 30px; position: absolute; top: 13px; width: 640px; z-index: 1; " class="style_SkipStroke_3">
+              <div class="text-content Normal_External_640_23" style="padding: 0px; ">
+                <div class="Normal">
+                  <p style="padding-bottom: 0pt; padding-top: 0pt; " class="Date">10 de março de 2013</p>
+                </div>
+              </div>
+              <div id="generic-datefield-attributes" class="Date"></div>
+            </div>
+            <div style="height: 1px; line-height: 1px; " class="tinyText"> </div>
+            <div style="visibility: hidden;  margin-left: 30px; margin-top: 501px; position: relative; width: 640px; z-index: 1; " class="style_SkipStroke_4 flowDefining">
+              <div class="text-content Normal_External_640_3661" style="padding: 0px; ">
+                <div class="Normal">
+                  <p style="padding-top: 0pt; " class="Body">This part continues the WinDbg tool discussed start in <a class="class1" title="../2/1_Debugging_Tools_For_Windows.html" href="../2/1_Debugging_Tools_For_Windows.html">Debugging Tools For Windows</a> post and shows additional commands that helps analyze issue in addition to the <span class="style">!analyze</span> command introduced in <a class="class2" title="../2/8_WinDbg_Part_I.html" href="../2/8_WinDbg_Part_I.html">WinDbg Part I</a> post.<br /></p>
+                  <p class="Body"><br /></p>
+                  <p class="Body">The number of command and its parameter are huge and they can be seen through the WinDbg help. This post will introduce few useful commands and some of them options. All options listed here should be executed in the WinDbg window command line. Finally, the list is not particularly grouped.<br /></p>
+                  <p class="Body"><br /></p>
+                  <p class="paragraph_style"><span style="line-height: 22px; " class="style_1">List of Commands</span><br /></p>
+                  <p class="Body"><br /></p>
+                  <p class="Body"><span class="style">~</span><br /></p>
+                  <p class="Body">This command list all thread, its state, id and environment block address (TEB). The <span class="style_2">.</span> (as highlighted below) indicates which thread was running when the debug stopped or dump was created.<br /></p>
+                  <p class="Body"><span class="style_2">0:036&gt; </span><span class="style_3">~</span><span class="style_2"><br /></span></p>
+                  <p class="Body"><span class="style_2">   0  Id: 109c.1700 Suspend: 0 Teb: 7ffdf000 Unfrozen<br /></span></p>
+                  <p class="Body"><span class="style_2">   1  Id: 109c.3ac Suspend: 0 Teb: 7ffdb000 Unfrozen<br /></span></p>
+                  <p class="Body"><span class="style_2">   2  Id: 109c.86c Suspend: 0 Teb: 7ffd9000 Unfrozen<br /></span></p>
+                  <p class="Body"><span class="style_2">   3  Id: 109c.b90 Suspend: 0 Teb: 7ffd8000 Unfrozen<br /></span></p>
+                  <p class="Body"><span class="style_2">   4  Id: 109c.e58 Suspend: 0 Teb: 7ffd6000 Unfrozen<br /></span></p>
+                  <p class="Body"><span class="style_2">   5  Id: 109c.156c Suspend: 0 Teb: 7ffd5000 Unfrozen<br /></span></p>
+                  <p class="Body"><span class="style_2">   6  Id: 109c.2e4 Suspend: 0 Teb: 7ff4f000 Unfrozen<br /></span></p>
+                  <p class="Body"><span class="style_2">   7  Id: 109c.14dc Suspend: 0 Teb: 7ff4e000 Unfrozen<br /></span></p>
+                  <p class="Body"><span class="style_2">   8  Id: 109c.1400 Suspend: 0 Teb: 7ff4d000 Unfrozen<br /></span></p>
+                  <p class="Body"><span class="style_2">   9  Id: 109c.e50 Suspend: 0 Teb: 7ff4c000 Unfrozen<br /></span></p>
+                  <p class="Body"><span class="style_2">  10  Id: 109c.fe4 Suspend: 0 Teb: 7ff4a000 Unfrozen<br /></span></p>
+                  <p class="Body"><span class="style_2">  11  Id: 109c.1180 Suspend: 0 Teb: 7ff48000 Unfrozen<br /></span></p>
+                  <p class="Body"><span class="style_2">  12  Id: 109c.8a8 Suspend: 0 Teb: 7ff47000 Unfrozen<br /></span></p>
+                  <p class="Body"><span class="style_2">  13  Id: 109c.1428 Suspend: 0 Teb: 7ffdd000 Unfrozen<br /></span></p>
+                  <p class="Body"><span class="style_2">  14  Id: 109c.be4 Suspend: 0 Teb: 7ff4b000 Unfrozen<br /></span></p>
+                  <p class="Body"><span class="style_2">  15  Id: 109c.e30 Suspend: 0 Teb: 7ff42000 Unfrozen<br /></span></p>
+                  <p class="Body"><span class="style_2">  16  Id: 109c.11ac Suspend: 0 Teb: 7ff41000 Unfrozen<br /></span></p>
+                  <p class="Body"><span class="style_2">  17  Id: 109c.a78 Suspend: 0 Teb: 7ff40000 Unfrozen<br /></span></p>
+                  <p class="Body"><span class="style_2">  18  Id: 109c.1354 Suspend: 0 Teb: 7ff3f000 Unfrozen<br /></span></p>
+                  <p class="Body"><span class="style_2">  19  Id: 109c.eec Suspend: 0 Teb: 7ff3e000 Unfrozen<br /></span></p>
+                  <p class="Body"><span class="style_2">  20  Id: 109c.1454 Suspend: 0 Teb: 7ff3d000 Unfrozen<br /></span></p>
+                  <p class="Body"><span class="style_2">  21  Id: 109c.1768 Suspend: 0 Teb: 7ff3c000 Unfrozen<br /></span></p>
+                  <p class="Body"><span class="style_2">  22  Id: 109c.1474 Suspend: 0 Teb: 7ff3b000 Unfrozen<br /></span></p>
+                  <p class="Body"><span class="style_2">  23  Id: 109c.14ac Suspend: 0 Teb: 7ff3a000 Unfrozen<br /></span></p>
+                  <p class="Body"><span class="style_2">  24  Id: 109c.11f8 Suspend: 0 Teb: 7ff39000 Unfrozen<br /></span></p>
+                  <p class="Body"><span class="style_2">  25  Id: 109c.8cc Suspend: 0 Teb: 7ff38000 Unfrozen<br /></span></p>
+                  <p class="Body"><span class="style_2">  26  Id: 109c.b80 Suspend: 0 Teb: 7ff34000 Unfrozen<br /></span></p>
+                  <p class="Body"><span class="style_2">  27  Id: 109c.1188 Suspend: 0 Teb: 7ff33000 Unfrozen<br /></span></p>
+                  <p class="Body"><span class="style_2">  28  Id: 109c.17f4 Suspend: 0 Teb: 7ff32000 Unfrozen<br /></span></p>
+                  <p class="Body"><span class="style_2">  29  Id: 109c.d50 Suspend: 0 Teb: 7ff31000 Unfrozen<br /></span></p>
+                  <p class="Body"><span class="style_2">  30  Id: 109c.820 Suspend: 0 Teb: 7ff43000 Unfrozen<br /></span></p>
+                  <p class="Body"><span class="style_2">  31  Id: 109c.13dc Suspend: 0 Teb: 7ff2d000 Unfrozen<br /></span></p>
+                  <p class="Body"><span class="style_2">  32  Id: 109c.11fc Suspend: 0 Teb: 7ff2c000 Unfrozen<br /></span></p>
+                  <p class="Body"><span class="style_2">  33  Id: 109c.48c Suspend: 0 Teb: 7ff2a000 Unfrozen<br /></span></p>
+                  <p class="Body"><span class="style_2">  34  Id: 109c.4c4 Suspend: 0 Teb: 7ff29000 Unfrozen<br /></span></p>
+                  <p class="Body"><span class="style_2">  35  Id: 109c.264 Suspend: 0 Teb: 7ff28000 Unfrozen<br /></span></p>
+                  <p class="Body"><span class="style_4">. 36  Id: 109c.c30 Suspend: 0 Teb: 7ff44000 Unfrozen</span><span class="style_2"><br /></span></p>
+                  <p class="Body"><span class="style_2">  37  Id: 109c.124c Suspend: 0 Teb: 7ff27000 Unfrozen<br /></span></p>
+                  <p class="Body"><span class="style_2">  38  Id: 109c.938 Suspend: 0 Teb: 7ff49000 Unfrozen<br /></span></p>
+                  <p class="Body"><span class="style_2">  39  Id: 109c.1228 Suspend: 0 Teb: 7ffd7000 Unfrozen<br /></span></p>
+                  <p class="Body"><span class="style_2">  40  Id: 109c.fac Suspend: 0 Teb: 7ff36000 Unfrozen<br /></span></p>
+                  <p class="Body"><span class="style_2">  41  Id: 109c.20e0 Suspend: 0 Teb: 7ffde000 Unfrozen<br /></span></p>
+                  <p class="Body"><span class="style_2">  42  Id: 109c.1090 Suspend: 0 Teb: 7ff30000 Unfrozen<br /></span></p>
+                  <p class="Body"><span class="style_2">  43  Id: 109c.25bc Suspend: 0 Teb: 7ff1f000 Unfrozen<br /></span></p>
+                  <p class="Body"><span class="style_2">  44  Id: 109c.26b4 Suspend: 0 Teb: 7ff37000 Unfrozen<br /></span></p>
+                  <p class="Body"><span class="style_2">  45  Id: 109c.6c4 Suspend: 0 Teb: 7ff26000 Unfrozen<br /></span></p>
+                  <p class="Body"><span class="style_2">  46  Id: 109c.1a6c Suspend: 0 Teb: 7ffdc000 Unfrozen<br /></span></p>
+                  <p class="Body"><span class="style_2">  47  Id: 109c.b2c Suspend: 0 Teb: 7ff2e000 Unfrozen<br /></span></p>
+                  <p class="Body"><span class="style_2">  48  Id: 109c.1da8 Suspend: 0 Teb: 7ff45000 Unfrozen</span><br /></p>
+                  <p class="Body"><br /></p>
+                  <p class="Body">This command has few interesting parameters, such as <span class="style">~~[PID]</span> that gives information from a specific thread.<br /></p>
+                  <p class="Body"><br /></p>
+                  <p class="Body"><span class="style">kP [number]</span><br /></p>
+                  <p class="Body">This command collects the stack of the current from the last instruction to the [number]th instruction. If [number] is 10, the command will listed only the last 10 instructions. What is really interesting with this command is that it may be able to retrieve the list of parameters and its contents in addition to the common <span class="style">k</span> command (which retrieves the stack, function address and the source line info when available).<br /></p>
+                  <p class="Body"><br /></p>
+                  <p class="Body">This command can also be combined with thread commands to evaluate stack of all thread form instance: <span class="style">~*kP 100</span>.<br /></p>
+                  <p class="Body"><br /></p>
+                  <p class="Body"><span class="style">.ecxr</span><br /></p>
+                  <p class="Body">This command directs the debugger to the exception context, i.e. to the thread and instruction that caused the exception, when this is the case. It reports the registers states, the function address and the assembly instruction that caused the exception. After executing this command, the <span class="style">kP</span> command retrieves the exactly stack of the the failed thread.<br /></p>
+                  <p class="Body">Most of the cases, the <span class="style">!analyze -v</span> command, points to the correct exception context. However, during the debugging process, this context can be far way and this command set it back. Additionally, there are few times the <span class="style">!analyze -v</span> command does not end the exception context. So applying this command will help much.<br /></p>
+                  <p class="Body"><br /></p>
+                  <p class="Body"><span class="style">d[opt] &lt;address&gt; command set</span><br /></p>
+                  <p class="Body">The <span class="style">d</span> commands are a set of commands that retrieve the state of the memory address. Each existent <span class="style">[opt]</span> of <span class="style">d</span> command set display a memory range in different mode:<br /></p>
+                  <p class="Body"><span class="style">da</span> - ASCII form                                        <span class="style">du</span> - Unicode form<br /></p>
+                  <p class="Body"><br /></p>
+                  <p class="Body"><span class="style">db</span> - byte and ASCII form:<br /></p>
+                  <p class="Body"><span class="style_2">0:000&gt; </span><span class="style_3">db 0x0984ad38</span><span class="style_2"><br /></span></p>
+                  <p class="Body"><span class="style_2">0984ad38  50 65 72 20 66 61 72 65-20 75 6e 61 20 73 65 67  Per fare una seg<br /></span></p>
+                  <p class="Body"><span class="style_2">0984ad48  6e 61 6c 61 7a 69 6f 6e-65 20 6f 20 70 6f 72 72  nalazione o porr<br /></span></p>
+                  <p class="Body"><span class="style_2">0984ad58  65 20 75 6e 61 20 64 6f-6d 61 6e 64 61 2c 20 63  e una domanda, c<br /></span></p>
+                  <p class="Body"><span class="style_2">0984ad68  6f 6e 74 61 74 74 61 72-65 20 75 6e 61 20 64 65  ontattare una de<br /></span></p>
+                  <p class="Body"><span class="style_2">0984ad78  6c 6c 65 0d 0a 73 65 67-75 65 6e 74 69 20 72 69  lle..seguenti ri<br /></span></p>
+                  <p class="Body"><span class="style_2">0984ad88  73 6f 72 73 65 20 61 7a-69 65 6e 64 61 6c 69 3a  sorse aziendali:<br /></span></p>
+                  <p class="Body"><span class="style_2">0984ad98  0d 0a 2e 2e 20 49 6c 20-74 75 6f 20 73 75 70 65  .... Il tuo supe<br /></span></p>
+                  <p class="Body"><span class="style_2">0984ada8  72 76 69 73 6f 72 65 20-6f 20 75 6e 20 61 6c 74  rvisore o un alt</span><br /></p>
+                  <p class="Body"><br /></p>
+                  <p class="Body"><span class="style">dw</span> - 2-byte word                                       <span class="style">dW</span> - 2-bytes word and ASCII<br /></p>
+                  <p class="Body"><span class="style">dd</span> - 4-byte double word                            <span class="style">dc</span> - 4-byte double word and ASCII<br /></p>
+                  <p class="Body"><span class="style">dq</span> - 8-byte quad word<br /></p>
+                  <p class="Body"><br /></p>
+                  <p class="Body"><span class="style">dyb</span> - binary and byte form:<br /></p>
+                  <p class="Body"><span class="style_2">0:000&gt; </span><span class="style_3">dyb 0x0984ad38</span><span class="style_2"><br /></span></p>
+                  <p class="Body"><span class="style_2">          76543210 76543210 76543210 76543210<br /></span></p>
+                  <p class="Body"><span class="style_2">          -------- -------- -------- --------<br /></span></p>
+                  <p class="Body"><span class="style_2">0984ad38  01010000 01100101 01110010 00100000  50 65 72 20<br /></span></p>
+                  <p class="Body"><span class="style_2">0984ad3c  01100110 01100001 01110010 01100101  66 61 72 65<br /></span></p>
+                  <p class="Body"><span class="style_2">0984ad40  00100000 01110101 01101110 01100001  20 75 6e 61<br /></span></p>
+                  <p class="Body"><span class="style_2">0984ad44  00100000 01110011 01100101 01100111  20 73 65 67<br /></span></p>
+                  <p class="Body"><span class="style_2">0984ad48  01101110 01100001 01101100 01100001  6e 61 6c 61<br /></span></p>
+                  <p class="Body"><span class="style_2">0984ad4c  01111010 01101001 01101111 01101110  7a 69 6f 6e<br /></span></p>
+                  <p class="Body"><span class="style_2">0984ad50  01100101 00100000 01101111 00100000  65 20 6f 20<br /></span></p>
+                  <p class="Body"><span class="style_2">0984ad54  01110000 01101111 01110010 01110010  70 6f 72 72</span><br /></p>
+                  <p class="Body"><br /></p>
+                  <p class="Body"><span class="style">dyd</span> - binary and 4-byte double word<br /></p>
+                  <p class="Body"><br /></p>
+                  <p class="Body">It is possible to continue looking at the memory block by typing the same command. For instance, after typing <span class="style">db 0x0984ad38</span>, the <span class="style">db</span> without address will show the next block from <span class="style_2">0984ada8+0x10</span>:<br /></p>
+                  <p class="Body"><span class="style_4">0984adb8</span><span class="style_5">  72 6f 20 6d 65 6d 62 72-6f 20 64 65 6c 6c 61 20  ro membro della <br /></span></p>
+                  <p class="Body"><span class="style_5">0984adc8  64 69 72 69 67 65 6e 7a-61 20 61 7a 69 65 6e 64  dirigenza aziend<br /></span></p>
+                  <p class="Body"><span class="style_5">0984add8  61 6c 65 0d 0a 2e 2e 20-55 6e 20 72 61 70 70 72  ale.... Un rappr<br /></span></p>
+                  <p class="Body"><span class="style_5">0984ade8  65 73 65 6e 74 61 6e 74-65 20 64 65 6c 6c 65 20  esentante delle <br /></span></p>
+                  <p class="Body"><span class="style_5">0984adf8  72 69 73 6f 72 73 65 20-75 6d 61 6e 65 0d 0a 2e  risorse umane...<br /></span></p>
+                  <p class="Body"><span class="style_5">0984ae08  2e 20 55 6e 20 43 68 69-65 66 20 43 6f 6d 70 6c  . Un Chief Compl<br /></span></p>
+                  <p class="Body"><span class="style_5">0984ae18  69 61 6e 63 65 20 4f 66-66 69 63 65 72 20 28 72  iance Officer (r<br /></span></p>
+                  <p class="Body"><span class="style_5">0984ae28  65 73 70 6f 6e 73 61 62-69 6c 65 20 70 65 72 20  esponsabile per </span><br /></p>
+                  <p class="Body"><br /></p>
+                  <p class="Body">This is possible for all <span class="style">d</span> command set.<br /></p>
+                  <p class="Body"><br /></p>
+                  <p class="Body"><br /></p>
+                  <p class="Body"><br /></p>
+                  <p class="Body"><br /></p>
+                  <p class="Body"><br /></p>
+                  <p class="Body"><br /></p>
+                  <p class="Body"><br /></p>
+                  <p class="Body"><br /></p>
+                  <p class="Body"><br /></p>
+                  <p class="Body"><br /></p>
+                  <p class="Body"><br /></p>
+                  <p class="Body"><br /></p>
+                  <p class="Body"><br /></p>
+                  <p class="Body"><br /></p>
+                  <p class="Body"><br /></p>
+                  <p class="Body"><br /></p>
+                  <p class="Body"><br /></p>
+                  <p class="paragraph_style"><span style="line-height: 22px; " class="style_1">Interesting Sequence</span><br /></p>
+                  <p class="Body"><br /></p>
+                  <p class="Body">After having shown some commands and options, how would they be used together? The answer depends on which sort of error. In any case, however, there is an interesting sequence that can be used to after the <span class="style">!analyze -v</span> command. The sequence is:<br /></p>
+                  <p class="Body"><span class="style">.ecxr</span>                            go to the exception context - may not be needed<br /></p>
+                  <p class="Body"><span class="style">kP 100</span>                         last 100 calls on the stack<br /></p>
+                  <p class="Body"><br /></p>
+                  <p class="Body"><br /></p>
+                  <p class="Body"><br /></p>
+                  <p class="Body"><br /></p>
+                  <p class="Body"><br /></p>
+                  <p class="Body"><br /></p>
+                  <p class="paragraph_style"><span style="line-height: 22px; " class="style_1">Conclusion</span><br /></p>
+                  <p class="Body"><br /></p>
+                  <p class="Body">Beside the commands and options shown above, the Internet has a vast number of useful sites and blogs that provider further information, tips and tricks, such as:<br /></p>
+                  <p class="Body"><br /></p>
+                  <p class="Body">ntdebugging - Advanced Windows Debugging and Troubleshooting from MSDN:<br /></p>
+                  <p class="Body"><a title="http://blogs.msdn.com/b/ntdebugging/" href="http://blogs.msdn.com/b/ntdebugging/">http://blogs.msdn.com/b/ntdebugging/</a><br /></p>
+                  <p class="Body"><br /></p>
+                  <p class="Body">Crash Dump Analysis:<br /></p>
+                  <p class="Body"><a title="http://www.dumpanalysis.org/blog/" href="http://www.dumpanalysis.org/blog/">http://www.dumpanalysis.org/blog/</a><br /></p>
+                  <p class="Body"><br /></p>
+                  <p class="Body">Both sites about has much more information than simply a list of commands. They also show how to use them, inform details about the error, etc.<br /></p>
+                  <p class="Body"><br /></p>
+                  <p class="Free_Form"><span class="style_6">Common WinDbg Commands (Thematically Grouped)</span><br /></p>
+                  <p class="Body"><a title="http://windbg.info/doc/1-common-cmds.html" href="http://windbg.info/doc/1-common-cmds.html">http://windbg.info/doc/1-common-cmds.html</a><br /></p>
+                  <p class="Body"><br /></p>
+                  <p style="padding-bottom: 0pt; " class="Body">This one is basically the same information found in the WinDbg help, but in one single page. Additionally, this site has a <a class="class3" title="http://windbg.info/forum/10-windbg-related-discussions.html" href="http://windbg.info/forum/10-windbg-related-discussions.html">forum</a> about related to WinDbg, but it may not be so useful as expected.</p>
+                </div>
+              </div>
+              <div id="generic-body-attributes" class="Body"></div>
+            </div>
+            
+
+
+            <div style="height: 414px; width: 420px;  height: 414px; left: 31px; position: absolute; top: 77px; width: 420px; z-index: 1; " class="tinyText stroke_0">
+              <div style="position: relative; width: 420px; ">
+                <img src="10_WinDbg_Part_II_files/shapeimage_1.jpg" alt="" style="height: 414px; left: 0px; position: absolute; top: 0px; width: 420px; " />
+              </div>
+            </div>
+            <div style="height: 0px; line-height: 0px; " class="spacer"> </div>
+          </div>
+          <div style="height: 150px; margin-left: 0px; position: relative; width: 700px; z-index: 15; " id="footer_layer">
+            <div style="height: 0px; line-height: 0px; " class="bumper"> </div>
+            <div id="id4" style="height: 30px; left: 350px; position: absolute; top: 20px; width: 319px; z-index: 1; " class="style_SkipStroke_5">
+              <div class="text-content graphic_textbox_layout_style_default_External_319_30" style="padding: 0px; ">
+                <div class="graphic_textbox_layout_style_default">
+                  <div class="paragraph Next" style="padding-bottom: 0pt; padding-top: 0pt; "><a title="../../../Archive.html" href="../../../Archive.html" class="style_7">next</a><span class="style_8"> </span><div class="tinyText inline-block" style="height: 15px; position: relative; top: -3px; width: 10px; "><img usemap="#map1" id="shapeimage_2" src="10_WinDbg_Part_II_files/shapeimage_2.png" style="border: none; height: 21px; left: -3px; position: absolute; top: -3px; width: 16px; z-index: 1; " alt="" title="" /><map name="map1" id="map1"><area href="../../../Archive.html" title="../../../Archive.html" alt="../../../Archive.html" coords="3, 3, 13, 18" /></map></div></div>
+                </div>
+                <div style="clear: both; height: 0px; line-height: 0px; " class="tinyText"> </div>
+              </div>
+            </div>
+            
+
+
+            <div id="id5" style="height: 30px; left: 30px; position: absolute; top: 20px; width: 320px; z-index: 1; " class="style_SkipStroke_5">
+              <div class="text-content graphic_textbox_layout_style_default_External_320_30" style="padding: 0px; ">
+                <div class="graphic_textbox_layout_style_default">
+                  <div class="paragraph Previous" style="padding-bottom: 0pt; padding-top: 0pt; "><div class="tinyText inline-block" style="height: 15px; position: relative; width: 10px; "><img usemap="#map2" id="shapeimage_3" src="10_WinDbg_Part_II_files/shapeimage_3.png" style="border: none; height: 21px; left: -3px; position: absolute; top: -3px; width: 16px; z-index: 1; " alt="" title="" /><map name="map2" id="map2"><area href="../2/24_Heap_Corruption.html" title="../2/24_Heap_Corruption.html" alt="../2/24_Heap_Corruption.html" coords="3, 3, 13, 18" /></map></div><span class="style_8"> </span><a title="../2/24_Heap_Corruption.html" href="../2/24_Heap_Corruption.html" class="style_8">previous</a></div>
+                </div>
+                <div style="clear: both; height: 0px; line-height: 0px; " class="tinyText"> </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
+
+

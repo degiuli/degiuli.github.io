@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<content collectionGUID="FB58F55C-9585-4C68-BAD6-2F593DC4614A">
+  <lastEdited clientType="local-build-20130324" date="2013-03-24 21:04:14 +0000"/>
+  <textBox id="generic-header-attribute" dynamic="no" visible="yes">
+    <richText>&lt;a href="perma://BLPageReference/2D085D6A-902D-4579-899A-CF8E11275EFB"&gt;Windows Debugging Series&lt;/a&gt;</richText>
+  </textBox>
+  <textBox id="generic-title-attributes" dynamic="no" visible="yes">
+    <richText>ADPlus</richText>
+  </textBox>
+  <textBox id="generic-datefield-attributes" dynamic="no" visible="yes">
+    <richText>7 de fevereiro de 2013</richText>
+  </textBox>
+  <textBox id="generic-body-attributes" dynamic="no" visible="yes">
+    <richText>ADPlus is a tool that is part of the &lt;a href="perma://BLPageReference/1B5FFF65-769B-4CD8-9754-AE4691D6C2DC"&gt;Debugging Tools for Windows&lt;/a&gt;. It was originally a VB script that used the CDB tool. Later, it also becomes an executable.&#xD;&#xD;It acts as a process monitor capable of generating dump files whenever a crash. It can also creates dump file from a hang application. Additionally, it has a notification mechanism that can notify user of a crash.&#xD;&#xD;To create dump files from both crash and hangs, it highly recommend to enable some global flags (&lt;a href="perma://BLPageReference/67BEBB94-BAA7-41FC-A700-13B4F8FBCE2F"&gt;gflags&lt;/a&gt;) for the faulting application. For crashing application heap can be enabled and for hanging one, stack trace can be enabled.&#xD;&#xD;Usage:&#xD;adplus -Crash -pn &#x201C;ImageName.exe&#x201D; -o &lt;dump_dir&gt;&#xD;adplus -Hang -pn &#x201C;ImageName.exe&#x201D; -o &lt;dump_dir&gt;&#xD;The first create dump file for both first and second change exceptions while the second create a dump file for a hanging application and then put all logs and dump file into the dump_dir.&#xD;&#xD;Other information can be found at MSDN Support on &lt;a href="http://support.microsoft.com/kb/286350/en-us"&gt;How to use ADPlus.vbs to troubleshoot "hangs" and "crashes"&lt;/a&gt;.</richText>
+  </textBox>
+</content>
