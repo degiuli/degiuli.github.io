@@ -10,17 +10,17 @@
 
 ## Conteúdo
 
-1. [Introdução](post/JamesClerkMaxwell#intro)
-2. [Uma Curta e Proveitosa Jornada](post/JamesClerkMaxwell#bio)
-3. [Os Primeiros Passos à Grandiosidade](post/JamesClerkMaxwell#primeiros)
-4. [Sua Visão das Cores](post/JamesClerkMaxwell#cores)
-5. [Maxwell e Seus Anéis](post/JamesClerkMaxwell#aneis)
-6. [A Estatística de Uma Vida](post/JamesClerkMaxwell#estatistica)
-7. [Maxwell dá a Luz](post/JamesClerkMaxwell#luz)
-8. [Os Campos de Maxwell](post/JamesClerkMaxwell#campos)
-9. [Outros Trabalhos](post/JamesClerkMaxwell#outros)
-10. [Considerações Finais](post/JamesClerkMaxwell#finais)
-11. [Bibliografia](post/JamesClerkMaxwell#biblio)
+1. [Introdução](JamesClerkMaxwell#intro)
+2. [Uma Curta e Proveitosa Jornada](JamesClerkMaxwell#bio)
+3. [Os Primeiros Passos à Grandiosidade](JamesClerkMaxwell#primeiros)
+4. [Sua Visão das Cores](JamesClerkMaxwell#cores)
+5. [Maxwell e Seus Anéis](JamesClerkMaxwell#aneis)
+6. [A Estatística de Uma Vida](JamesClerkMaxwell#estatistica)
+7. [Maxwell dá a Luz](JamesClerkMaxwell#luz)
+8. [Os Campos de Maxwell](JamesClerkMaxwell#campos)
+9. [Outros Trabalhos](JamesClerkMaxwell#outros)
+10. [Considerações Finais](JamesClerkMaxwell#finais)
+11. [Bibliografia](JamesClerkMaxwell#biblio)
 
 ---
 
@@ -371,4 +371,4 @@ HARMAN, Peter Michael. Energy, Force, and Matter: The Conceptual Development of 
 
 ---
 
-Copyright &copy; 2016-2017, Fábio Lourenção De Giuli. All rights reserved.
+Copyright &copy; 2002-2017, Fábio Lourenção De Giuli. All rights reserved.
