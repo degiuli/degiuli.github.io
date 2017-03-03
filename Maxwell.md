@@ -10,17 +10,17 @@
 
 ## Conteúdo
 
-1. [Introdução](JamesClerkMaxwell#intro)
-2. [Uma Curta e Proveitosa Jornada](JamesClerkMaxwell#bio)
-3. [Os Primeiros Passos à Grandiosidade](JamesClerkMaxwell#primeiros)
-4. [Sua Visão das Cores](JamesClerkMaxwell#cores)
-5. [Maxwell e Seus Anéis](JamesClerkMaxwell#aneis)
-6. [A Estatística de Uma Vida](JamesClerkMaxwell#estatistica)
-7. [Maxwell dá a Luz](JamesClerkMaxwell#luz)
-8. [Os Campos de Maxwell](JamesClerkMaxwell#campos)
-9. [Outros Trabalhos](JamesClerkMaxwell#outros)
-10. [Considerações Finais](JamesClerkMaxwell#finais)
-11. [Bibliografia](JamesClerkMaxwell#biblio)
+1. [Introdução](#intro)
+2. [Uma Curta e Proveitosa Jornada](#bio)
+3. [Os Primeiros Passos à Grandiosidade](#primeiros)
+4. [Sua Visão das Cores](#cores)
+5. [Maxwell e Seus Anéis](#aneis)
+6. [A Estatística de Uma Vida](#estatistica)
+7. [Maxwell dá a Luz](#luz)
+8. [Os Campos de Maxwell](#campos)
+9. [Outros Trabalhos](#outros)
+10. [Considerações Finais](#finais)
+11. [Bibliografia](#biblio)
 
 ---
 
