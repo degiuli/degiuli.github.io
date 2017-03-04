@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head><meta charset="utf-8"><title>Glossary</title></head>
+<h1 id="windbg">WinDBG</h1>
+<p>Go to <a href="Intro.html">Home</a></p>
+<h2 id="glossary">Glossary</h2>
+<p>This page gives a brief definition of some relevant keywords and expression that is going to be used along this series. This page, as the introduction, will continuously be updates as new relevant keywords and expression is added in other pages.</p>
+<h3 id="definitions">Definitions</h3>
+<ol style="list-style-type: decimal">
+<li><strong>Exception</strong>:</li>
+</ol>
+<ul>
+<li>Exception in software is an action that is not part of the of the ordinary operation. Exception moves the execution from the current part of the code to other part of the code or system code.</li>
+</ul>
+<ol start="2" style="list-style-type: decimal">
+<li><strong>Unhandled exception</strong>:</li>
+</ol>
+<ul>
+<li>Unhandled exception is an exception that is not dealt with the code. It can occur for many reason that will be discussed in this series posts. Unhandled exception is usually seen by the <code>Kernel32!RaiseException</code>, which is initiate by the CPU. An application can also raise an exception, for instance using the <code>throw</code> statement, but neither this not the CPU exception are properly caught and handled internally by the application.</li>
+</ul>
+<ol start="3" style="list-style-type: decimal">
+<li><strong>Deadlocks</strong>:</li>
+</ol>
+<ul>
+<li>Deadlock is a situation in which two or more concurrent thread are each waiting for other to complete its action and this never happens.</li>
+<li>For instance: suppose one application has two threads that access a flag protected by a mutant exclusive (mutex) or critical section. One of this thread locks the flag access but never releases and, when the second one tries to lock it will be blocked.</li>
+</ul>
+<ol start="4" style="list-style-type: decimal">
+<li><strong>Memory corruption</strong>:</li>
+</ol>
+<ul>
+<li>Please see the <a href="MemoryCorruption.html">Memory Corruption</a> page.</li>
+</ul>
+<ol start="5" style="list-style-type: decimal">
+<li><strong>Resource Leaks</strong>:</li>
+</ol>
+<ul>
+<li>Resource is any entity that occupies space (physical or virtual memory) in system, such as handles and memory. Leaks are any resource that have been acquired or created but not properly released or deleted. For instance, a memory created using the <code>new</code> statement but not deleted by <code>delete</code> statement or a event handle created by <code>CreateEvent</code> API but not released by the <code>CloseHandle</code> API.</li>
+<li>Please see the <a href="ResourceLeakes.html">Resource Leaks</a> page.</li>
+</ul>
+<ol start="6" style="list-style-type: decimal">
+<li><strong>First change exception</strong>:</li>
+</ol>
+<ul>
+<li>First chance exception most often does not mean there is a problem in the code. For applications which handle exceptions gracefully, first chance exception messages let the developer know that an exceptional situation was encountered and was handled.</li>
+</ul>
+<ol start="7" style="list-style-type: decimal">
+<li><strong>Second change exception</strong>:</li>
+</ol>
+<ul>
+<li>Second change exception is a notification for unhandled exception that will certainly prevent application from continue running.</li>
+</ul>
+<ol start="8" style="list-style-type: decimal">
+<li><strong>Postmortem Debugging</strong>:</li>
+</ol>
+<ul>
+<li>This is simply a crash or hang dump analysis that has been collected from an ex-running application.</li>
+</ul>
+</html>

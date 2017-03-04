@@ -24,7 +24,7 @@
 
 ---
 
-![alt text](James_Clerk_Maxwell.png "James Clerk Maxwell")
+![alt text](Maxwell.png "James Clerk Maxwell")
 
 _Image Description: Engraving of James Clerk Maxwell by G. J. Stodart from a photograph by Fergus of Greenack. Date: unkown. Source: Frontpiece in James Maxwell, The Scientific Papers of James Clerk Maxwell. Ed: W. D. Niven. New York: Dover, 1890. Author: G. J. Stodart. Permission: As a work from sometime before 1890, in the public domain._
 

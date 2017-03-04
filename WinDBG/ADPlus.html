@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head><meta charset="utf-8"><title>ADPlus</title></head>
+<h1 id="windbg">WinDBG</h1>
+<p>Go to <a href="Intro.html">Home</a></p>
+<h2 id="adplus">ADPlus</h2>
+<p>ADPlus is a tool that is part of the <a href="Tools.html">Debugging Tools for Windows</a>. It was originally a VB script that used the CDB tool. Later, it also becomes an executable.</p>
+<p>It acts as a process monitor capable of generating dump files whenever a crash. It can also creates dump file from a hang application. Additionally, it has a notification mechanism that can notify user of a crash.</p>
+<p>To create dump files from both crash and hangs, it highly recommend to enable some <a href="GFlags.html">global flags</a> for the faulting application. For crashing application heap can be enabled and for hanging one, stack trace can be enabled.</p>
+<p>Usage:</p>
+<ul>
+<li><code>adplus -Crash -pn “ImageName.exe” [-o &lt;dump_dir&gt;]</code></li>
+<li><code>adplus -Hang -pn “ImageName.exe” [-o &lt;dump_dir&gt;]</code></li>
+</ul>
+<p>The first creates dump file for both first and second chance exceptions while the second create a dump file for a hanging application and then put all logs and dump file into a <code>Crash/Hang_XXX</code> folder inside the adplus folder or in the <code>dump_dir</code> when option <code>-o</code> is specified.</p>
+<p>Other information can be found at MSDN Support at <a href="http://support.microsoft.com/kb/286350/en-us" class="uri">http://support.microsoft.com/kb/286350/en-us</a> about how to use ADPlus.vbs to troubleshoot &quot;hangs&quot; and &quot;crashes&quot;.</p>
+</html>

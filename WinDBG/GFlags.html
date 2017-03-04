@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head><meta charset="utf-8"><title>GFlags</title></head>
+<h1 id="windbg">WinDBG</h1>
+<p>Go to <a href="Intro.html">Home</a></p>
+<h2 id="global-flags-gflags">Global Flags (GFlags)</h2>
+<p>Global Flags, or simply <code>gflags</code>, is a configuration tool part of the Debugging Tools For Windows package. It provides both console-mode and a graphical interface (GUI) and can configure the system to collect much more detail from a process, i.e. it instruments the process for debugging. It also instruments the system wide for kernel mode debugging, which requires a reboot.</p>
+<p>All <code>gflags</code> configurations are storage in the Registry. System wide settings are located at</p>
+<pre><code>[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Session Manager]
+&quot;GlobalFlag&quot;=dword:00820502</code></pre>
+<p>while each process has an independent key</p>
+<pre><code>[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\Process.exe]
+&quot;GlobalFlag&quot;=&quot;0x121099f2&quot;</code></pre>
+<p>The value storage into the <code>GlobalFlag</code> key, represents an bit setting for the corresponding configuration set. <strong>IMPORTANT</strong>: Unless you know exactly what are you doing, <strong>DO NOT</strong> update the registry directly. Instead, use the <code>gflags</code> either from GUI or console to set the registry value and them you can export it.</p>
+<p>Although it providers much instrumentations features for system, this page will focus on the process instrumentation (Image File tab in graphical interface).</p>
+<p>Now, let’s look at the console mode option, which also provides an overview of the GUI option.</p>
+<p>Usage: <code>gflags [option] [ImageName] [+/-Flag]</code></p>
+<p>The <code>options</code> are:</p>
+<ul>
+<li><code>-r</code> controls the persistent options for system (System Registry tab)</li>
+<li><code>-k</code> controls the kernel options (Kernel Flags tab)</li>
+<li><code>-i [ImageName]</code> controls a process options (Image File tab)</li>
+<li><code>-p</code> controls pageheap options (See below the <code>Flags</code> supported). For instance, if needed to enable application verifier for a process, the command line would be <code>gflags -i Process.exe +vrf</code> and to disable the page heap <code>gflags -i Process.exe -hpa</code></li>
+</ul>
+<p>The list of Flags below gives a brief details about the <code>gflags</code> options:</p>
+<ul>
+<li><code>soe</code> - Stop on exception</li>
+<li><code>sls</code> - Show loader snaps (via a debug tool, e.g. DebugView, Visual Studio, WinDbg, this show information about the loading and unloading process of an DLL</li>
+<li><code>dic</code> - Debug initial command</li>
+<li><code>shg</code> - Stop on hung GUI</li>
+<li><code>htc</code> - Enable heap tail checking</li>
+<li><code>hfc</code> - Enable heap free checking</li>
+<li><code>hpc</code> - Enable heap parameter checking</li>
+<li><code>hvc</code> - Enable heap validation on call</li>
+<li><code>vrf</code> - Enable application verifier</li>
+<li><code>ptg</code> - Enable pool tagging</li>
+<li><code>htg</code> - Enable heap tagging</li>
+<li><code>ust</code> - Create user mode stack trace database (see <a href="LeakDiagnosisTools.html#UMDH">Leak Diagnosis Tools</a></li>
+<li><code>kst</code> - Create kernel mode stack trace database (useful for kernel debugging mode or to debug an application that interacts much with kernel)</li>
+<li><code>otl</code> - Maintain a list of objects for each type</li>
+<li><code>htd</code> - Enable heap tagging by DLL</li>
+<li><code>dse</code> - Disable stack extensions</li>
+<li><code>d32</code> - Enable debugging of Win32 Subsystem</li>
+<li><code>ksl</code> - Enable loading of kernel debugging symbols</li>
+<li><code>dps</code> - Disable paging of kernel stacks</li>
+<li><code>scb</code> - Enable system-critical breaks</li>
+<li><code>dhc</code> - Disable heap coalesce on free</li>
+<li><code>ece</code> - Enable close exception</li>
+<li><code>eel</code> - Enable exception logging</li>
+<li><code>eot</code> - Enable object handle type tagging</li>
+<li><code>hpa</code> - Enable page heap (which is also known as <code>gflags /p /enable &lt;process&gt; /full</code></li>
+<li><code>dwl</code> - Debug Winlogon</li>
+<li><code>ddp</code> - Disable kernel mode DbgPrint output</li>
+<li><code>cse</code> - Early critical section event creation</li>
+<li><code>ltd</code> - Load DLLs top-down</li>
+<li><code>bhd</code> - Enable bad handles detection</li>
+<li><code>dpd</code> - Disable protected DLL verification&lt;</li>
+<li><code>lpg</code> - Load image using large pages if possible</li>
+</ul>
+<p><strong>Be careful!</strong> Some options will certainly slow down the monitored application. Also, depending on the combination of flags used, the application may not even run!</p>
+</html>
