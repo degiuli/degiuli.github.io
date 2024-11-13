@@ -349,7 +349,7 @@ Poderemos ouvir, que existiram outros cientistas que tenha sido muito maiores, o
 
 # <a name="biblio">11. Bibliografia</a>
 
-CAMPBELL, Lewis &amp; GARNETT, Willian. The Life of James Clerk Maxwell; MacMillan and Co., Londres, Inglaterra; Primeira Edição, 1882; Segunda Edição 1884; endereço na Internet <a title="http://hrshowcase.com/maxwell/directory.html" href="http://hrshowcase.com/maxwell/directory.html">http://hrshowcase.com/maxwell/directory.html</a>. (Nota: O livro foi consultado originalmente através do link, mas ele não mais está disponível.)
+CAMPBELL, Lewis &amp; GARNETT, Willian. The Life of James Clerk Maxwell; MacMillan and Co., Londres, Inglaterra; Primeira Edição, 1882; Segunda Edição 1884; endereço na Internet <a title="http://hrshowcase.com/maxwell/directory.html" href="http://hrshowcase.com/maxwell/directory.html">http://hrshowcase.com/maxwell/directory.html</a>. (Nota: O livro foi consultado originalmente através do link, mas está somente disponível no Web Archive <a title="https://web.archive.org/web/20030618193115/http://www.hrshowcase.com/maxwell/directory.html" href="https://web.archive.org/web/20030618193115/http://www.hrshowcase.com/maxwell/directory.html">aqui</a>.)
 
 MILLAR, Ian, David, John &amp; Margaret. The Cambridge Dictionary; Cambridge University Press; Cambridge, Inglaterra; 1996.
 
